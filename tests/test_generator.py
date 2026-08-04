@@ -69,7 +69,22 @@ def test_style_luminances(style):
 def test_oled_safe():
     assert oled_safe(STYLES["safe"])
     assert oled_safe(STYLES["classic"])
+    assert oled_safe(STYLES["night"])
     assert not oled_safe(STYLES["bright"])
+    assert not oled_safe(STYLES["amber"])
+
+
+def test_night_style_is_warm_and_dim():
+    red, green, blue = STYLES["night"]
+    assert red > green > blue
+    assert blue < 0.4 * green
+    assert oled_safe(STYLES["night"])
+
+
+def test_amber_style_is_warm_but_visible():
+    red, green, blue = STYLES["amber"]
+    assert red > green > blue
+    assert luminance_ratio(STYLES["amber"]) > OLED_SAFE_MAX_LUMINANCE
 
 
 def test_shift_offsets_vary_center():

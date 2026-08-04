@@ -3,7 +3,7 @@
 from crosswall.generator import STYLES, generate, luminance_ratio, oled_safe
 from crosswall.presets import PRESETS, list_presets
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = [
     "PRESETS",
     "STYLES",

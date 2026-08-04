@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crosswall"
-version = "0.1.0"
+version = "0.1.1"
 description = "Burn-in-safe Christian cross wallpapers for OLED and LCD screens"
 readme = "README.md"
 requires-python = ">=3.10"
